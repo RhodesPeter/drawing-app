@@ -1,0 +1,20 @@
+canvas {
+  background-color: #f1f1f1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  /*cursor: url('pencil.png'), auto;*/
+}
+
+.button-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/*.canvasimg {
+  position: absolute;
+  top: 10%;
+  left: 52%;
+  display: none;
+}*/
