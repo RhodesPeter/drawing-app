@@ -1,0 +1,36 @@
+{
+  "name": "drawing-app",
+  "version": "1.0.0",
+  "description": "A drawing app with redis ",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RhodesPeter/drawing-app.git"
+  },
+  "keywords": [
+    "Redis",
+    "HTML",
+    "Canvas",
+    "Hapi",
+    "Node",
+    "Tachyons",
+    "Heroku"
+  ],
+  "author": "Peter Rhodes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RhodesPeter/drawing-app/issues"
+  },
+  "homepage": "https://github.com/RhodesPeter/drawing-app#readme",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "redis": "^2.6.5"
+  },
+  "devDependencies": {
+    "tachyons": "^4.6.1"
+  }
+}
