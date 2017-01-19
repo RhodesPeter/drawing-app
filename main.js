@@ -1,18 +1,19 @@
-// document.getElementsByClassName('save-btn').addEventListener("click", save())
-// document.getElementsByClassName('.erase-btn').addEventListener("click", erase())
+document.getElementsByClassName('erase-btn')[0].addEventListener("click", erase);
 
-var canvas, ctx, flag = false,
-   prevX = 0,
-   currX = 0,
-   prevY = 0,
-   currY = 0,
-   dot_flag = false;
+var canvas,
+    ctx,
+    flag = false,
+    prevX = 0,
+    currX = 0,
+    prevY = 0,
+    currY = 0,
+    dot_flag = false;
 
 var x = "black",
-   y = 2;
+    y = 2;
 
 function init() {
-   canvas = document.getElementById('can');
+   canvas = document.getElementsByClassName('can')[0];
    ctx = canvas.getContext("2d");
    w = canvas.width;
    h = canvas.height;
@@ -29,6 +30,7 @@ function init() {
    canvas.addEventListener("mouseout", function (e) {
        findxy('out', e)
    }, false);
+
 }
 
 function draw() {
@@ -43,14 +45,6 @@ function draw() {
 
 function erase() {
    ctx.clearRect(0, 0, w, h);
-   document.getElementById("canvasimg").style.display = "none";
-}
-
-function save() {
-   document.getElementById("canvasimg").style.border = "2px solid";
-   var dataURL = canvas.toDataURL();
-   document.getElementById("canvasimg").src = dataURL;
-   document.getElementById("canvasimg").style.display = "inline";
 }
 
 function findxy(res, e) {
@@ -83,3 +77,9 @@ function findxy(res, e) {
        }
    }
 }
+
+document.getElementsByClassName('save')[0].addEventListener('click', saveImg);
+
+function saveImg() {
+  this.href = canvas.toDataURL('image/png');
+};
