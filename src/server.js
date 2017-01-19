@@ -4,7 +4,7 @@ const inert = require('inert');
 const server = new hapi.Server();
 
 server.connection({
-  port: 4000
+  port
 });
 
 server.register(require('inert'), (err) => {
