@@ -4,7 +4,7 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  /*cursor: url('pencil.png'), auto;*/
+  /*cursor: url('assets/images/pencil.png'), auto;*/
 }
 
 .button-container {
@@ -12,9 +12,6 @@ canvas {
   text-align: center;
 }
 
-/*.canvasimg {
-  position: absolute;
-  top: 10%;
-  left: 52%;
-  display: none;
-}*/
+.save {
+  text-decoration: none;
+}

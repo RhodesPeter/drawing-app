@@ -7,14 +7,13 @@
   </head>
   <body onload="init()">
 
-    <canvas id="can" width="800" height="500"></canvas>
-
-    <!--This may be important for saving the images-->
-    <img id="canvasimg">
+    <canvas class="can" width="800" height="500"></canvas>
 
     <div class="button-container">
-      <input class="save-btn" type="button" value="save">
-      <input id="erase-btn" type="button" value="clear" onclick="erase()">
+      <a class="save" href="#" download="drawing.png" target="_blank">
+        <input class="download-btn" type="button" value="download">
+      </a>
+      <input class="erase-btn" type="button" value="clear">
     </div>
 
     <script src="main.js" type="text/javascript"></script>
