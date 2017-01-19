@@ -4,7 +4,7 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  /*cursor: url('assets/images/pencil.png'), auto;*/
+  /*cursor: url('./assets/images/pencil.png'), auto;*/
 }
 
 .button-container {
