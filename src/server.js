@@ -3,6 +3,8 @@ const inert = require('inert');
 
 const server = new hapi.Server();
 
+const port = process.env.PORT || 8000;
+
 server.connection({
   port
 });
