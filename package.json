@@ -1,7 +1,7 @@
 {
   "name": "drawing-app",
   "version": "1.0.0",
-  "description": "A drawing app with redis ",
+  "description": "A drawing app with redis",
   "main": "main.js",
   "engines": {
     "node": "6.9.1"
