@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "devStart": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,8 +16,6 @@
     "url": "git+https://github.com/RhodesPeter/drawing-app.git"
   },
   "keywords": [
-    "Redis",
-    "HTML",
     "Canvas",
     "Hapi",
     "Node",
@@ -35,6 +34,7 @@
     "redis": "^2.6.5"
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "tachyons": "^4.6.1"
   }
 }
