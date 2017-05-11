@@ -1,10 +1,13 @@
 document.getElementsByClassName('clear-btn')[0].addEventListener("click", erase);
+document.getElementsByClassName('save')[0].addEventListener('click', saveImg);
 
 var canvasSize = document.getElementsByClassName('can')[0];
 var canvasWidth = canvasSize.offsetWidth;
 var canvasHeight = canvasSize.offsetHeight;
+var downloaded = false;
 
 window.addEventListener('resize', function(event){
+  if (downloaded){ return; }
   canvasWidth = canvasSize.offsetWidth;
   canvasHeight = canvasSize.offsetHeight;
   init();
@@ -92,8 +95,8 @@ function findxy(res, e) {
   }
 }
 
-document.getElementsByClassName('save')[0].addEventListener('click', saveImg);
-
 function saveImg() {
+  downloaded = true;
+  setTimeout(function(){ downloaded = false; }, 500);
   this.href = canvas.toDataURL('image/png');
 };
