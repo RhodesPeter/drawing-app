@@ -29,9 +29,26 @@ canvas {
 
 .download-btn,
 .clear-btn {
-  border: 2px solid blue;
+  border: 0.13rem solid black;
   border-radius: 3px;
   background-color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 110px;
+}
+
+.download-btn:focus,
+.clear-btn:focus {
+  outline: none;
+}
+
+.download-btn:active,
+.clear-btn:active {
+  transform: translate(0, 1px);
+}
+
+.download-btn {
+  margin-right: 0.4rem;
 }
 
 @media screen and (max-width: 580px) {
