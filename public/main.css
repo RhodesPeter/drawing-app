@@ -1,3 +1,8 @@
+body {
+  background-image: url("../assets/images/pencil-background.svg");
+  background-position: center;
+}
+
 .main__container {
   height: 97vh;
   display: -webkit-flex;
@@ -52,6 +57,10 @@ canvas {
 }
 
 @media screen and (max-width: 580px) {
+  body {
+    background-size: 25rem;
+  }
+
   canvas {
     width: 90%;
     height: 85%;
