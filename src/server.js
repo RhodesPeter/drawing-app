@@ -1,5 +1,4 @@
 const hapi = require('hapi');
-const inert = require('inert');
 
 const server = new hapi.Server();
 
@@ -10,23 +9,22 @@ server.connection({
 });
 
 server.register(require('inert'), (err) => {
+  if (err) {
+    throw err;
+  }
 
-    if (err) {
-        throw err;
+  server.route({
+    method: 'GET',
+    path: '/{file*}',
+    handler: {
+      directory: {
+        path: 'public'
+      }
     }
-
-    server.route({
-        method: 'GET',
-        path: '/{file*}',
-        handler: {
-          directory: {
-            path: 'public'
-          }
-        }
-    });
+  });
 });
 
-server.start( (err) => {
+server.start(err => {
   if (err) throw err;
   console.log('Server is running on:', server.info.uri);
 });

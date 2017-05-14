@@ -1,5 +1,10 @@
+body {
+  background-image: url("../assets/images/pencil-background.svg");
+  background-position: center;
+}
+
 .main__container {
-  height: 100vh;
+  height: 97vh;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -29,12 +34,33 @@ canvas {
 
 .download-btn,
 .clear-btn {
-  border: 2px solid blue;
+  border: 0.13rem solid black;
   border-radius: 3px;
   background-color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 110px;
+}
+
+.download-btn:focus,
+.clear-btn:focus {
+  outline: none;
+}
+
+.download-btn:active,
+.clear-btn:active {
+  transform: translate(0, 1px);
+}
+
+.download-btn {
+  margin-right: 0.4rem;
 }
 
 @media screen and (max-width: 580px) {
+  body {
+    background-size: 25rem;
+  }
+
   canvas {
     width: 90%;
     height: 85%;
