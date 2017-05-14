@@ -19,7 +19,7 @@
     "Canvas",
     "Hapi",
     "Node",
-    "Tachyons",
+    "HTML5",
     "Heroku"
   ],
   "author": "Peter Rhodes",
@@ -30,10 +30,10 @@
   "homepage": "https://github.com/RhodesPeter/drawing-app#readme",
   "dependencies": {
     "hapi": "^16.1.0",
-    "inert": "^4.1.0",
-    "redis": "^2.6.5"
+    "inert": "^4.1.0"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
     "nodemon": "^1.11.0",
     "tachyons": "^4.6.1"
   }
