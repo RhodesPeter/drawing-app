@@ -18,9 +18,7 @@
   var dotFlag = false;
   var lineColour = 'black';
   var lineThickness = 2;
-  var dbDrawingOne = document.getElementsByClassName('recent-drawings__one')[0];
-  var dbDrawingTwo = document.getElementsByClassName('recent-drawings__two')[0];
-  var dbDrawingThree = document.getElementsByClassName('recent-drawings__three')[0];
+  var recentDrawings = document.getElementsByClassName('recent-drawings')[0];
 
   window.addEventListener('resize', function (event) {
     if (downloaded) { return; }
@@ -127,7 +125,11 @@
   }
 
   function createElements (drawings) {
-    console.log(drawings);
+    drawings.slice(-3).forEach(function (drawing) {
+      var div = document.createElement('IMG');
+      div.src = drawing.drawing;
+      div.alt = 'Recent Drawing';
+      recentDrawings.appendChild(div);
+    });
   }
-
 })();
