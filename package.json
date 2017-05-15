@@ -7,8 +7,8 @@
     "node": "6.9.1"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "devStart": "nodemon src/server.js",
+    "start": "node src/server-start.js",
+    "devStart": "nodemon src/server-start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
