@@ -17,15 +17,14 @@ const options = {
 mongoose.connect(uri, options);
 
 conn.on('error', console.error.bind(console, 'connection error:'));
-
 conn.once('open', () => {
   console.log('We are connected!');
 });
 
-const GoodGymSchema = new Schema({
-  run: String
+const DrawingAppSchema = new Schema({
+  drawing: String
 });
 
-const GoodGymDB = mongoose.model('GoodGymDB', GoodGymSchema);
+const DrawingAppDB = mongoose.model('drawing-app-db', DrawingAppSchema);
 
-module.exports = GoodGymDB;
+module.exports = DrawingAppDB;

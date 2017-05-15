@@ -29,8 +29,10 @@
   },
   "homepage": "https://github.com/RhodesPeter/drawing-app#readme",
   "dependencies": {
+    "env2": "^2.2.0",
     "hapi": "^16.1.0",
-    "inert": "^4.1.0"
+    "inert": "^4.1.0",
+    "mongoose": "^4.9.9"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

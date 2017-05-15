@@ -1,12 +1,12 @@
-const GoodGymDB = require('./db-connection');
+const DrawingAppDB = require('./db-connection');
 
-const findAll = () => {
-  GoodGymDB.find({}, (err, runs) => {
-    if (err) throw err;
-    console.log(runs);
+const findAll = (cb) => {
+  DrawingAppDB.find({}, (err, drawings) => {
+    if (err) {
+      return cb(err);
+    }
+    return cb(null, drawings);
   });
 };
-
-findAll();
 
 module.exports = findAll;

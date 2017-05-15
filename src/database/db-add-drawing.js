@@ -1,16 +1,17 @@
-const GoodGymDB = require('./db-connection');
+const DrawingAppDB = require('./db-connection');
 
-const addRunToDB = (inputRun) => {
-  let newRun = GoodGymDB({
-    run: inputRun
+const addDrawingToDB = (inputDrawing, cb) => {
+  let newDrawing = DrawingAppDB({
+    drawing: inputDrawing
   });
 
-  newRun.save((err) => {
-    if (err) throw err;
-    console.log('Run created!');
+  newDrawing.save((err) => {
+    if (err) {
+      return cb(err);
+    }
+    console.log('Drawing saved!');
+    return cb(null, inputDrawing);
   });
 };
 
-addRunToDB('drawing_1');
-
-module.exports = addRunToDB;
+module.exports = addDrawingToDB;

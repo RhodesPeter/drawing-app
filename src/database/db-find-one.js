@@ -1,12 +1,12 @@
-const GoodGymDB = require('./db-connection');
+const DrawingAppDB = require('./db-connection');
 
-const findOneRun = (runName) => {
-  GoodGymDB.findOne({run: runName}, (err, run) => {
+const findOneRun = (drawingName) => {
+  DrawingAppDB.findOne({drawing: drawingName}, (err, drawing) => {
     if (err) throw err;
-    console.log(run);
+    console.log(drawing);
   });
 };
 
-findOneRun('run123');
+findOneRun('drawing-name');
 
 module.exports = findOneRun;

@@ -17,7 +17,7 @@ body {
 
 canvas {
   width: 75%;
-  height: 75%;
+  height: 80%;
   background-color: #f1f1f1;
   cursor: pointer;
   border-radius: 3px;
@@ -28,12 +28,13 @@ canvas {
   text-align: center;
 }
 
-.save {
+.download {
   text-decoration: none;
 }
 
 .download-btn,
-.clear-btn {
+.clear-btn,
+.save-btn {
   -webkit-appearance: none;
   border-radius: 0;
   border: 0.13rem solid black;
@@ -42,19 +43,23 @@ canvas {
   font-size: 1rem;
   padding: 0.5rem;
   width: 110px;
+  margin-bottom: 10px;
 }
 
 .download-btn:focus,
-.clear-btn:focus {
+.clear-btn:focus,
+.save-btn:focus {
   outline: none;
 }
 
 .download-btn:active,
-.clear-btn:active {
+.clear-btn:active,
+.save-btn:active {
   transform: translate(0, 1px);
 }
 
-.download-btn {
+.download-btn,
+.clear-btn {
   margin-right: 0.4rem;
 }
 
