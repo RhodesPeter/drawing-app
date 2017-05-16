@@ -12,6 +12,20 @@ module.exports = [
     }
   },
   {
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+      reply.view('home');
+    }
+  },
+  {
+    method: 'GET',
+    path: '/saved',
+    handler: (request, reply) => {
+      reply.view('saved');
+    }
+  },
+  {
     method: 'POST',
     path: '/post-drawing',
     handler: (request, reply) => {

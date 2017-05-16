@@ -34,7 +34,8 @@ canvas {
 
 .download-btn,
 .clear-btn,
-.save-btn {
+.save-btn,
+.view-recent-btn {
   -webkit-appearance: none;
   border-radius: 0;
   border: 0.13rem solid black;
@@ -48,19 +49,23 @@ canvas {
 
 .download-btn:focus,
 .clear-btn:focus,
-.save-btn:focus {
+.save-btn:focus,
+.view-recent-btn:focus {
   outline: none;
 }
 
 .download-btn:active,
 .clear-btn:active,
-.save-btn:active {
+.save-btn:active,
+.view-recent-btn:active {
   transform: translate(0, 1px);
 }
 
 .download-btn,
-.clear-btn {
-  margin-right: 0.4rem;
+.clear-btn,
+.save-btn,
+.view-recent-btn {
+  margin: 0.2rem;
 }
 
 @media screen and (max-width: 580px) {
