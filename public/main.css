@@ -1,6 +1,7 @@
 body {
   background-image: url("../assets/images/pencil-background.svg");
   background-position: center;
+  background-color: white;
 }
 
 .main__container {
@@ -9,6 +10,20 @@ body {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.drawings-container {
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
@@ -35,7 +50,8 @@ canvas {
 .download-btn,
 .clear-btn,
 .save-btn,
-.view-recent-btn {
+.view-recent-btn,
+.make-drawing-btn {
   -webkit-appearance: none;
   border-radius: 0;
   border: 0.13rem solid black;
@@ -43,29 +59,32 @@ canvas {
   background-color: white;
   font-size: 1rem;
   padding: 0.5rem;
-  width: 110px;
-  margin-bottom: 10px;
+  width: 115px;
+  margin: 0.2rem;
 }
 
 .download-btn:focus,
 .clear-btn:focus,
 .save-btn:focus,
-.view-recent-btn:focus {
+.view-recent-btn:focus,
+.make-drawing-btn:focus {
   outline: none;
 }
 
 .download-btn:active,
 .clear-btn:active,
 .save-btn:active,
-.view-recent-btn:active {
+.view-recent-btn:active,
+.make-drawing-btn:active {
   transform: translate(0, 1px);
 }
 
-.download-btn,
-.clear-btn,
-.save-btn,
-.view-recent-btn {
-  margin: 0.2rem;
+.make-drawing-btn {
+  width: 150px;
+}
+
+.recent-drawings {
+  width: 250px;
 }
 
 @media screen and (max-width: 580px) {

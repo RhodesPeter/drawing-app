@@ -1,13 +1,12 @@
 (function () {
   document.addEventListener('DOMContentLoaded', init, false);
-  document.addEventListener('DOMContentLoaded', getImages, false);
-  document.getElementsByClassName('clear-btn')[0].addEventListener('click', erase);
-  document.getElementsByClassName('download')[0].addEventListener('click', downloadImg);
-  document.getElementsByClassName('save-btn')[0].addEventListener('click', saveImg);
+  var clearButton = document.getElementsByClassName('clear-btn')[0];
+  var downloadButton = document.getElementsByClassName('download')[0];
+  var saveButton = document.getElementsByClassName('save-btn')[0];
 
   var canvas = document.getElementsByClassName('can')[0];
-  var canvasWidth = canvas.offsetWidth;
-  var canvasHeight = canvas.offsetHeight;
+  var canvasWidth = null;
+  var canvasHeight = null;
   var downloaded = false;
   var ctx;
   var flag = false;
@@ -18,7 +17,28 @@
   var dotFlag = false;
   var lineColour = 'black';
   var lineThickness = 2;
-  var recentDrawings = document.getElementsByClassName('recent-drawings')[0];
+  var drawingsContainer = document.getElementsByClassName('drawings-container')[0];
+
+  if (clearButton) {
+    clearButton.addEventListener('click', erase);
+  }
+
+  if (downloadButton) {
+    downloadButton.addEventListener('click', downloadImg);
+  }
+
+  if (saveButton) {
+    saveButton.addEventListener('click', saveImg);
+  }
+
+  (function () {
+    if (!canvas) {
+      getImages();
+      return;
+    }
+    canvasWidth = canvas.offsetWidth;
+    canvasHeight = canvas.offsetHeight;
+  })();
 
   window.addEventListener('resize', function (event) {
     if (downloaded) { return; }
@@ -28,6 +48,7 @@
   });
 
   function init () {
+    if (!canvas) { return; }
     ctx = canvas.getContext('2d');
 
     canvas.width = canvasWidth;
@@ -90,11 +111,9 @@
 
   function saveImg () {
     var payload = this.href = canvas.toDataURL('image/png');
-
     var http = new XMLHttpRequest();
     var url = '/post-drawing';
     http.open('POST', url, true);
-
     http.onreadystatechange = function () {
       if (!http.readyState === 4 && !http.status === 200) {
         console.log(http.responseText);
@@ -125,11 +144,12 @@
   }
 
   function createElements (drawings) {
-    drawings.slice(-3).forEach(function (drawing) {
+    drawings.slice(-4).forEach(function (drawing) {
       var div = document.createElement('IMG');
       div.src = drawing.drawing;
       div.alt = 'Recent Drawing';
-      recentDrawings.appendChild(div);
+      div.classList.add('recent-drawings');
+      drawingsContainer.appendChild(div);
     });
   }
 })();
