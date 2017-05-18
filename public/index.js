@@ -18,6 +18,7 @@
   var lineColour = 'black';
   var lineThickness = 2;
   var drawingsContainer = document.getElementsByClassName('drawings-container')[0];
+  var loader = document.getElementsByClassName('loader')[0];
 
   if (clearButton) {
     clearButton.addEventListener('click', erase);
@@ -136,6 +137,8 @@
       if (http.readyState === 4 && http.status === 200) {
         var drawings = JSON.parse(http.responseText);
         createElements(drawings.drawings);
+        drawingsContainer.classList.remove('display-none');
+        loader.classList.add('display-none');
       }
     };
 
@@ -144,12 +147,33 @@
   }
 
   function createElements (drawings) {
-    drawings.slice(-4).forEach(function (drawing) {
+    drawings.slice(-10).forEach(function (drawing) {
       var div = document.createElement('IMG');
       div.src = drawing.drawing;
       div.alt = 'Recent Drawing';
       div.classList.add('recent-drawings');
+      div.classList.add('mySlides');
+      div.style.display = 'none';
       drawingsContainer.appendChild(div);
     });
+    drawingsContainer.lastChild.style = 'inline-block';
   }
 })();
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs (n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs (n) {
+  var i;
+  var x = document.getElementsByClassName('mySlides');
+  if (n > x.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = x.length; }
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = 'none';
+  }
+  x[slideIndex - 1].style.display = 'block';
+}

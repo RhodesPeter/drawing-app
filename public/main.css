@@ -16,18 +16,22 @@ body {
   justify-content: center;
 }
 
-.drawings-container {
-  margin-bottom: 20px;
+/*.drawings-container {
+  margin: 0 30px;
   background-color: #f1f1f1;
-  padding: 40px;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  width: 75%;
+  text-align: center;
+}*/
+
+/*.recent-drawings {
+  display: inline-block;
+  width: 40%;
+  height: auto;
+  margin: 20px;
+}*/
+
+.display-none {
+  display: none;
 }
 
 canvas {
@@ -83,8 +87,34 @@ canvas {
   width: 150px;
 }
 
-.recent-drawings {
-  width: 250px;
+.loader {
+  margin-bottom: 20px;
+  border: 14px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 14px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 950px) {
+  .recent-drawings {
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    margin: 20px;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -103,6 +133,10 @@ canvas {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+
+  .recent-drawings {
+    width: 100%;
   }
 
   canvas {
