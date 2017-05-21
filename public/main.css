@@ -35,10 +35,6 @@ body {
   padding: 20px;
 }
 
-.display-none {
-  display: none;
-}
-
 canvas {
   width: 75%;
   height: 80%;
@@ -72,6 +68,10 @@ canvas {
   padding: 0.5rem;
   width: 115px;
   margin: 0.2rem;
+}
+
+.save-btn {
+  margin: 0;
 }
 
 .slideshow-left-button,
@@ -123,6 +123,23 @@ canvas {
   animation: spin 2s linear infinite;
 }
 
+.save-button-container {
+  display: inline-block;
+  position: relative;
+  width: 115px;
+  margin: 0.2rem;
+  background-color: red;
+}
+
+.button-validation {
+  position: absolute;
+  width: 115px;
+  height: 0px;
+  background-color: red;
+  -webkit-transition: 1s ease-in-out;
+  transform: translate(0, 0);
+}
+
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -133,13 +150,8 @@ canvas {
   100% { transform: rotate(360deg); }
 }
 
-@media screen and (max-width: 950px) {
-  /*.recent-drawings {
-    display: inline-block;
-    width: 80%;
-    height: auto;
-    margin: 20px;
-  }*/
+.display-none {
+  display: none;
 }
 
 @media screen and (max-width: 580px) {

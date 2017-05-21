@@ -111,6 +111,7 @@
   }
 
   function saveImg () {
+    displayValidation();
     var payload = this.href = canvas.toDataURL('image/png');
     var http = new XMLHttpRequest();
     var url = '/post-drawing';
@@ -177,11 +178,21 @@
 
   function showDivs (n) {
     var x = document.getElementsByClassName('mySlides');
-    if (n > x.length-1) { slideIndex = 0; }
+    if (n > x.length - 1) { slideIndex = 0; }
     if (n < 0) { slideIndex = x.length - 1; }
     for (var i = 0; i < x.length; i++) {
       x[i].style.display = 'none';
     }
     x[slideIndex].style.display = 'block';
+  }
+
+  function displayValidation () {
+    var validationDiv = document.getElementsByClassName('button-validation')[0];
+    validationDiv.style.transform = 'translate(0, -100px)';
+    validationDiv.style.height = '100px';
+    setTimeout(function () {
+      validationDiv.style.transform = 'translate(0, 0px)';
+      validationDiv.style.height = '0px';
+    }, 3000);
   }
 })();
