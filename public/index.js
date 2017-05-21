@@ -195,4 +195,16 @@
       validationDiv.style.height = '0px';
     }, 3000);
   }
+
+  function animateCheckmark () {
+    anime({
+      targets: '#checkmark path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      opacity: {
+        value: 1,
+        duration: 100
+      }
+    });
+  }
 })();
