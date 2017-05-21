@@ -110,7 +110,10 @@
     }
   }
 
+  var savedButtonPressed = false;
   function saveImg () {
+    if (savedButtonPressed) { return; }
+    savedButtonPressed = true;
     displayValidation();
     var payload = this.href = canvas.toDataURL('image/png');
     var http = new XMLHttpRequest();
@@ -122,6 +125,10 @@
       }
     };
     http.send(payload);
+
+    setTimeout(function () {
+      savedButtonPressed = false;
+    }, 4500);
   }
 
   function downloadImg () {
@@ -188,11 +195,21 @@
 
   function displayValidation () {
     var validationDiv = document.getElementsByClassName('button-validation')[0];
-    validationDiv.style.transform = 'translate(0, -100px)';
-    validationDiv.style.height = '100px';
+    var checkmark = document.getElementsByClassName('checkmark')[0];
+    validationDiv.style.transform = 'translate(0, -105px)';
+    validationDiv.style.height = '105px';
+
+    setTimeout(function () {
+      animateCheckmark();
+      setTimeout(function () {
+        checkmark.style.display = 'inline';
+      }, 10);
+    }, 1000);
+
     setTimeout(function () {
       validationDiv.style.transform = 'translate(0, 0px)';
       validationDiv.style.height = '0px';
+      checkmark.style.display = 'none';
     }, 3000);
   }
 
