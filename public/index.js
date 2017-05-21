@@ -147,7 +147,7 @@
   }
 
   function createElements (drawings) {
-    drawings.slice(-10).forEach(function (drawing) {
+    drawings.forEach(function (drawing) {
       var div = document.createElement('IMG');
       div.src = drawing.drawing;
       div.alt = 'Recent Drawing';

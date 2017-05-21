@@ -6,7 +6,7 @@ const findAll = (cb) => {
       return cb(err);
     }
     return cb(null, drawings);
-  });
+  }).sort({ $natural: -1 }).limit(10);
 };
 
 module.exports = findAll;
