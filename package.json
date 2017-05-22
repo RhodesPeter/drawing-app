@@ -1,8 +1,8 @@
 {
   "name": "drawing-app",
   "version": "1.0.0",
-  "description": "A drawing app with redis",
-  "main": "main.js",
+  "description": "A drawing app with mongoDB",
+  "main": "index.js",
   "engines": {
     "node": "6.9.1"
   },
@@ -20,7 +20,9 @@
     "Hapi",
     "Node",
     "HTML5",
-    "Heroku"
+    "Heroku",
+    "mongoDB",
+    "Handlebars"
   ],
   "author": "Peter Rhodes",
   "license": "ISC",
@@ -29,12 +31,15 @@
   },
   "homepage": "https://github.com/RhodesPeter/drawing-app#readme",
   "dependencies": {
+    "env2": "^2.2.0",
+    "handlebars": "^4.0.8",
     "hapi": "^16.1.0",
-    "inert": "^4.1.0"
+    "inert": "^4.1.0",
+    "mongoose": "^4.9.9",
+    "vision": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "nodemon": "^1.11.0",
-    "tachyons": "^4.6.1"
+    "nodemon": "^1.11.0"
   }
 }

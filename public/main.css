@@ -1,6 +1,7 @@
 body {
   background-image: url("../assets/images/pencil-background.svg");
   background-position: center;
+  background-color: white;
 }
 
 .main__container {
@@ -15,9 +16,28 @@ body {
   justify-content: center;
 }
 
+.drawings-container {
+  margin: 0 30px;
+  max-height: 400px;
+  max-width: 850px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.recent-drawings {
+  background-color: #f1f1f1;
+  margin: 0 auto;
+  display: block;
+  max-width:600px;
+  max-height:400px;
+  width: auto;
+  height: auto;
+  padding: 20px;
+}
+
 canvas {
   width: 75%;
-  height: 75%;
+  height: 80%;
   background-color: #f1f1f1;
   cursor: pointer;
   border-radius: 3px;
@@ -28,12 +48,17 @@ canvas {
   text-align: center;
 }
 
-.save {
+.download {
   text-decoration: none;
 }
 
 .download-btn,
-.clear-btn {
+.clear-btn,
+.save-btn,
+.view-recent-btn,
+.make-drawing-btn,
+.slideshow-left-button,
+.slideshow-right-button {
   -webkit-appearance: none;
   border-radius: 0;
   border: 0.13rem solid black;
@@ -41,21 +66,102 @@ canvas {
   background-color: white;
   font-size: 1rem;
   padding: 0.5rem;
-  width: 110px;
+  width: 115px;
+  margin: 0.2rem;
+}
+
+.save-btn {
+  margin: 0;
+}
+
+.slideshow-left-button,
+.slideshow-right-button {
+  width: 45px;
 }
 
 .download-btn:focus,
-.clear-btn:focus {
+.clear-btn:focus,
+.save-btn:focus,
+.view-recent-btn:focus,
+.make-drawing-btn:focus,
+.slideshow-left-button:focus,
+.slideshow-right-button:focus {
   outline: none;
 }
 
 .download-btn:active,
-.clear-btn:active {
+.clear-btn:active,
+.save-btn:active,
+.view-recent-btn:active,
+.make-drawing-btn:active,
+.slideshow-left-button:active,
+.slideshow-right-button:active {
   transform: translate(0, 1px);
 }
 
-.download-btn {
-  margin-right: 0.4rem;
+.slideshow {
+  text-align: center;
+}
+
+.saved-container {
+  position: absolute;
+  bottom: 35px;
+}
+
+.make-drawing-btn {
+  width: 150px;
+}
+
+.loader {
+  margin-bottom: 180px;
+  border: 14px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 14px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.save-button-container {
+  display: inline-block;
+  position: relative;
+  width: 115px;
+  margin: 0.2rem;
+  background-color: #3498db;
+}
+
+.button-validation {
+  position: absolute;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  width: 115px;
+  height: 0;
+  bottom: 38px;
+  background-color: #3498db;
+  -webkit-transition: 1.1s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.checkmark {
+  display: none;
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.display-none {
+  display: none;
 }
 
 @media screen and (max-width: 580px) {
@@ -65,7 +171,7 @@ canvas {
 
   .main__container {
     padding-top: 20px;
-    height: 85vh;
+    height: 87vh;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -74,6 +180,15 @@ canvas {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+
+  .drawings-container {
+    margin: 0 0 110px 0;
+  }
+
+  .recent-drawings {
+    width: 100%;
+    padding: 0;
   }
 
   canvas {
