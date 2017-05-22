@@ -42,7 +42,7 @@
   })();
 
   window.addEventListener('resize', function (event) {
-    if (downloaded) { return; }
+    if (downloaded || !canvas) { return; }
     canvasWidth = canvas.offsetWidth;
     canvasHeight = canvas.offsetHeight;
     init();
@@ -164,7 +164,6 @@
       div.style.display = 'none';
       drawingsContainer.appendChild(div);
     });
-    console.log(drawingsContainer);
     drawingsContainer.firstChild.style = 'block';
   }
 
@@ -190,24 +189,24 @@
     for (var i = 0; i < x.length; i++) {
       x[i].style.display = 'none';
     }
-    x[slideIndex].style.display = 'block';
+    if (x[slideIndex]) {
+      x[slideIndex].style.display = 'block';
+    }
   }
 
   function displayValidation () {
     var validationDiv = document.getElementsByClassName('button-validation')[0];
     var checkmark = document.getElementsByClassName('checkmark')[0];
-    validationDiv.style.transform = 'translate(0, -105px)';
     validationDiv.style.height = '105px';
 
     setTimeout(function () {
       animateCheckmark();
       setTimeout(function () {
         checkmark.style.display = 'inline';
-      }, 10);
+      }, 50);
     }, 1000);
 
     setTimeout(function () {
-      validationDiv.style.transform = 'translate(0, 0px)';
       validationDiv.style.height = '0px';
       checkmark.style.display = 'none';
     }, 3000);
